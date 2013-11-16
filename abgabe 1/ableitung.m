@@ -43,4 +43,14 @@ x = [0:0.1:0.9];
 loglog(x,vectorFehler1,'b',x,vectorFehler2,'g',x,vectorFehler3,'r')
 
 %2c
+%precision=16;
+%for i=1:1:10
+%    num2str(vectorFehler1(i),precision)
+%end
 
+%for i=1:1:10
+%    num2str(vectorFehler2(i),precision)
+%end
+%for i=1:1:10
+%    num2str(vectorFehler3(i),precision)
+%end
