@@ -1,0 +1,10 @@
+% Berechnen der Cs
+
+0) alle hs berechnen zwischen Stützstellen => (delta x)
+1) Matrix A aufstellen
+2) Ergebnisvektor r berechnen und aufstellen
+3) Lösen des Gleichungssystems c = A\r
+
+% Berechnen der bs
+
+% Berechnen der ds
