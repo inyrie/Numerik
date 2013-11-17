@@ -11,7 +11,7 @@ vectorYAbs = evaluateAbsolute(vectorX);
 splineCoeffs = spline(vectorX, vectorY, mycheby(n));
 splineAbsCoeffs = spline(vectorX, vectorYAbs, mycheby(n));
 
-% Auswerten des genaeherten Polynoms an den Chebycheff-Stuetzstellen:
+% Auswerten des genaeherten Polynoms an den Chebyshev-Stuetzstellen:
 evaluatedYs = zeros(1,length(vectorX));
 for i=1:length(vectorX)
     evaluatedYs(i) = hornerSolve(splineCoeffs,vectorX(i));

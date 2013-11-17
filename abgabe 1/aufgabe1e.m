@@ -3,9 +3,9 @@
 % die n Chebyshev-Stützstellen im Intervall [?1; 1] sowie die 
 % Funktionswerte von f(x) und g(x) = |x| an diesen Stellen bestimmt.
 
-% Bestimmen von 1000 Chebycheff-Stuetzstellen:
+% Bestimmen von 1000 Chebyshev-Stuetzstellen:
 listCheby = mycheby(1000)
-% Auswerten der urspruenglichen Funktion an den Cheby.-Stuetzstellen:
+% Auswerten der urspruenglichen Funktion an den Chebyshev-Stuetzstellen:
 listChebyY = evaluateOrigFunct(listCheby)
 
 % Bestimmen von g(x) = |x|:
