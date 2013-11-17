@@ -3,21 +3,13 @@
 
 n=21;
 % Ermitteln der Datenpunkte
-vectorX = -1:0.001:1;
+vectorX = mycheby(n);
 vectorY = evaluateOrigFunct(vectorX);
 vectorYAbs = evaluateAbsolute(vectorX);
 
-% Aufstellen der Splines mit Chebyshev_Stuetzstellen:
-splineCoeffs = spline(vectorX, vectorY, mycheby(n));
-splineAbsCoeffs = spline(vectorX, vectorYAbs, mycheby(n));
-
-% Auswerten des genaeherten Polynoms an den Chebyshev-Stuetzstellen:
-evaluatedYs = zeros(1,length(vectorX));
-for i=1:length(vectorX)
-    evaluatedYs(i) = hornerSolve(splineCoeffs,vectorX(i));
-end
+% Auswerten der Splines an Chebyshev-Stuetzstellen:
+evaluatedYs = spline(vectorX, vectorY, -1:0.001:1);
+evaluatedYsAbs = spline(vectorX, vectorYAbs, -1:0.001:1);
 
 % Plot der Funktionen:
-figure;plot(vectorX,evaluatedYs);
-%figure;plot(vectorX,evaluate)
-
+figure;plot(-1:0.001:1,evaluatedYs,-1:0.001:1,evaluatedYsAbs);
