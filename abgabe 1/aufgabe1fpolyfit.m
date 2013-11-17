@@ -14,8 +14,11 @@ interpolPolyAbsCoeffs = polyfit(vectorX, vectorYAbs, n-1);
 
 evaluatedYs = zeros(1,length(vectorX));
 
-for i=1:length(vectorX)
-    evaluatedYs(i) = hornerSolve(interpolPolyCoeffs,vectorX(i));
+% Auswerten des Polynoms an ausreichend vielen Stellen fuer schoeneren
+% Graphen:
+xToEvaluate=-1:0.001:1;
+for i=1:length(xToEvaluate)
+    evaluatedYs(i) = hornerSolve(interpolPolyCoeffs,xToEvaluate(i));
 end
 
-figure;plot(vectorX,evaluatedYs)
+figure;plot(xToEvaluate,evaluatedYs)
