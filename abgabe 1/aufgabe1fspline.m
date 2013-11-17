@@ -7,7 +7,7 @@ vectorX = -1:0.001:1;
 vectorY = evaluateOrigFunct(vectorX);
 vectorYAbs = evaluateAbsolute(vectorX);
 
-% Aufstellen der Splines:
+% Aufstellen der Splines mit Chebyshev_Stuetzstellen:
 splineCoeffs = spline(vectorX, vectorY, mycheby(n));
 splineAbsCoeffs = spline(vectorX, vectorYAbs, mycheby(n));
 
@@ -18,6 +18,6 @@ for i=1:length(vectorX)
 end
 
 % Plot der Funktionen:
-figure;plot(vectorX,evaluatedYs)
+figure;plot(vectorX,evaluatedYs);
 %figure;plot(vectorX,evaluate)
 
