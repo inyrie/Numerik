@@ -37,7 +37,3 @@ end
 % Polynom ausgewertet wird, sehr exaxt, aber mit zunehmender Entfernung von
 % der Auswertestelle nimmt die Abweichung (also der Fehler) zu.
 
-listCheby = mycheby(1000)
-listChebyY = evaluateOrigFunct(listCheby)
-
-figure;plot(listCheby,listChebyY)
