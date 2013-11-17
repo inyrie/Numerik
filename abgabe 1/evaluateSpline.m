@@ -1,6 +1,7 @@
 function [ evaluatedY ] = evaluateSpline( coeffMatrix, vectorX, xCoord )
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+% evaluateSpline: Evaluates a spline function at value xCoord, using
+% a given matrix for the coefficients of every single polynom for given 
+% intervalls defined by vectorX.
 
 startIndex = 0;
 
