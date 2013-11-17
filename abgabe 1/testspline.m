@@ -32,11 +32,5 @@ for i=1:1:length(xx)
     vectorVander(i) = hornerSolve(vectorC,xx(i));
 end
 
-
 figure;plot(xx,vectorVander);
-% Begründung für Unterschied zwischen Interpolation und Splines:
-% Bei Verwendung der Vandermonde-Matrix wird nur die einfache
-% Polynominterpolation mit einem Polynom gemacht. Die ist für die Stelle x, an der das
-% Polynom ausgewertet wird, sehr exaxt, aber mit zunehmender Entfernung von
-% der Auswertestelle nimmt die Abweichung (also der Fehler) zu.
 
