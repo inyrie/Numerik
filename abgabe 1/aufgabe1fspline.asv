@@ -1,8 +1,5 @@
 % AUFGABE 1f):
-% Bestimmen Sie fuer n = 21 das Interpolationspolynom mit polyfit
-% und Spline-Funktion (mit spline) fuer f und g. Was sagt die 
-% Abschaetzungsformel ueber den Fehler der Polynominterpolation bei g(x)
-% aus?
+% Bestimmen Sie fuer n = 21 die Spline-Funktion (mit spline) fuer f und g. 
 
 n=21;
 % Ermitteln der Datenpunkte
@@ -11,8 +8,8 @@ vectorY = evaluateOrigFunct(vectorX);
 vectorYAbs = evaluateAbsolute(vectorX);
 
 % MATLAB warnt - Polynomial is badly conditioned!
-interpolPolyCoeffs = polyfit(vectorX, vectorY, n-1);
-interpolPolyAbsCoeffs = polyfit(vectorX, vectorYAbs, n-1);
+splineCoeffs = spline(vectorX, vectorY, n-1);
+splineAbsCoeffs = polyfit(vectorX, vectorYAbs, n-1);
 
 evaluatedYs = zeros(1,length(vectorX));
 

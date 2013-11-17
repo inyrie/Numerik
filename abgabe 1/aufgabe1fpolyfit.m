@@ -1,8 +1,6 @@
 % AUFGABE 1f):
 % Bestimmen Sie fuer n = 21 das Interpolationspolynom mit polyfit
-% und Spline-Funktion (mit spline) fuer f und g. Was sagt die 
-% Abschaetzungsformel ueber den Fehler der Polynominterpolation bei g(x)
-% aus?
+% fuer f und g.
 
 n=21;
 % Ermitteln der Datenpunkte
@@ -21,6 +19,3 @@ for i=1:length(vectorX)
 end
 
 figure;plot(vectorX,evaluatedYs)
-
-%spline(vectorX, vectorY, n)
-
