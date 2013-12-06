@@ -1,4 +1,4 @@
-function [ intervallSum ] = AdaptQuad( tolerance, leftIntBorder, rightIntBorder )
+function [ intervallSum, opCount ] = AdaptQuad( tolerance, leftIntBorder, rightIntBorder, opCount )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -6,17 +6,23 @@ function [ intervallSum ] = AdaptQuad( tolerance, leftIntBorder, rightIntBorder 
 h = rightIntBorder - leftIntBorder;
 
 sumPartInt1 = dreiAchtel(@f, leftIntBorder, rightIntBorder);
-sumPartInt2 = dreiAchtel(@f, leftIntBorder, (leftIntBorder+ h/2)) + dreiAchtel(@f, (leftIntBorder + h/2), rightIntBorder)
+sumPartInt2 = dreiAchtel(@f, leftIntBorder, (leftIntBorder+ h/2)) + dreiAchtel(@f, (leftIntBorder + h/2), rightIntBorder);
 
-% if abs(sumPartInt1 - sumPartInt2) > tolerance
-%     
-%     % rekursiver Aufruf Formel:
-%     % Halbieren von h
-%     % Verschieben Intervallgrenzen
-%     
-%     sumPartInt1 = AdaptQuad(tolerance/2, leftIntBorder, leftIntBorder+ h/2) + AdaptQuad(tolerance/2, leftIntBorder + h/2, rightIntBorder);
-%     
-% end
+diff = abs(sumPartInt1 - sumPartInt2);
+
+if diff > tolerance
+    
+    opCount = opCount+1;
+    % rekursiver Aufruf Formel:
+    % Halbieren von h
+    % Verschieben Intervallgrenzen
+    
+    sumPartInt1 = AdaptQuad(tolerance, leftIntBorder, leftIntBorder+ h/2, opCount) + AdaptQuad(tolerance, leftIntBorder + h/2, rightIntBorder, opCount);
+
+
+else
+    opCount
+end
 
 intervallSum = sumPartInt1;
 
