@@ -17,11 +17,12 @@ if diff > tolerance
     % Halbieren von h
     % Verschieben Intervallgrenzen
     
-    sumPartInt1 = AdaptQuad(tolerance, leftIntBorder, leftIntBorder+ h/2, opCount) + AdaptQuad(tolerance, leftIntBorder + h/2, rightIntBorder, opCount);
+    [sumPart1,count1] = AdaptQuad(tolerance, leftIntBorder, leftIntBorder+ h/2, opCount);
+    [sumPart2,count2] = AdaptQuad(tolerance, leftIntBorder + h/2, rightIntBorder, opCount);
 
 
-else
-    opCount
+    sumPartInt1 = sumPart1 + sumPart2;
+    opCount = count1 + count2;
 end
 
 intervallSum = sumPartInt1;
