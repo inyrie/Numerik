@@ -21,11 +21,11 @@ if diff > tolerance
     [sumPart2,count2] = AdaptQuad(tolerance, leftIntBorder + h/2, rightIntBorder, opCount);
 
 
-    sumPartInt1 = sumPart1 + sumPart2;
+    sumPartInt2 = sumPart1 + sumPart2;
     opCount = count1 + count2;
 end
 
-intervallSum = sumPartInt1;
+intervallSum = sumPartInt2;
 
 end
 
